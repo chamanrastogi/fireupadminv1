@@ -1,0 +1,21 @@
+
+public static function show($pname,$action)
+ {
+		 echo'<form name="form" action="deleteall.php" method="post">
+            <div class="table-responsive" data-pattern="priority-columns">
+            <table id="'.$pname.'" class="table table-responsive table-striped table-bordered display" style="width:100%">
+             
+              <thead>
+               <tr>
+                  <th><input type="checkbox" name="checkall"/>
+                    Id</th>
+                  <th >Name</th>
+                  <th >Image</th>
+                  <th >Status</th>
+                  <th >Options </th>
+                </tr>
+              </thead>
+              
+            </table></div>
+          </form>';
+		  }

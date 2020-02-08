@@ -1,0 +1,12 @@
+$check=self::count_by_x("id",$_GET['id']);
+		if($check==0)
+		{
+			$message='
+			<div class="alert alert-warning text-center" role="alert"> <strong>Error!</strong>No! Record Exists    <span><img src="'.TP_BACK.'assets/loaders/c_loader_re.gif" title="c_loader_re.gif"></span> </div>
+</div>';
+			
+			 echo output_message($message);
+			
+redirect_by_js(BASE_PATH.BASE_FOLDER.DS."admin",500);
+exit();
+		}

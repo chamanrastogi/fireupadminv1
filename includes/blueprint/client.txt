@@ -1,0 +1,6 @@
+
+Table :--client
+
+Mysql Code :--['name',$str,'image',$str,'text',$mtext]
+
+Form Code :--$fdata->co("input","name",1).$fdata->image("Image Upload","image").$fdata->text("Text","text",1)

@@ -1,0 +1,25 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,R=301]
+
+RewriteRule ^(.*).html$ $1.php 
+
+RewriteRule ^contact$ contact.php [L]
+RewriteRule ^login_register$ login_register.php [L]
+RewriteRule ^logout$ logout.php [L]
+RewriteRule ^profile$ profile.php [L]
+RewriteRule ^gallery$ gallery.php [L]
+RewriteRule ^myorder$ myorder.php [L]
+RewriteRule ^car$ car.php [L]
+RewriteRule ^search$ search.php [L]
+RewriteRule ^bike/([0-9]+)$ bike.php?id=$1 [L]
+
+RewriteRule ^([^/.]+)_([^/.]+)/?$ page.php?sid=$1&page=$2 [L]
+RewriteCond %{THE_REQUEST} \?
+RewriteCond %{QUERY_STRING} id=([0-9]+)
+RewriteRule ^$ /page.php%1? [R=301,L]
+RewriteRule ^([a-zA-Z_-]+)$ page.php?id=$1 [L]
+Options -Indexes
+
+ErrorDocument 404 /404.html

@@ -1,0 +1,56 @@
+
+public static function show($pname,$action)
+ {
+		 echo'<form name="form" action="deleteall.php" method="post">
+            <table id="example" class="table table-responsive table-striped table-bordered display" style="width:100%">
+              <thead>
+               <tr>
+                  <th><input type="checkbox" name="checkall"/>
+                    Id</th>
+                  <th >Name</th>
+                  <th >Image</th>
+                  <th >Status</th>
+                  <th >Options </th>
+                </tr>
+              </thead>
+              <tbody>';
+               
+				 $datas = $pname::find_all();
+					foreach($datas as $row2) {					
+                echo'<tr class="item">
+                  <td><input type="checkbox" name="checkall[]"  value="'.$row2->id.'" />'.$row2->id.'</td>
+                  <td class="subject">'.$row2->name.'</td>
+                  <td class="subject">';
+				  if($row2->image!='')
+				   {
+					  
+					     if (file_exists($_SERVER['DOCUMENT_ROOT']."/".MYF.'/'.$row2->image_path())) 
+					   {
+						   
+						echo' <a  class="item-gallery lightview" data-lightview-group="group" href="'.TP_BACK.'../'.$row2->image_path().'">
+    <img src="'.TP_BACK.'../'.$row2->image_path().'"  class="img-polaroid" width="60" height="60" border="0"></a>';
+						   }
+				   }else
+						   {
+							   echo '<img class="thumbnail" src="'.TP_BACK.'assets/images/sample.jpg'.'" width="60" height="60">';
+							   
+						   }
+                  echo'</td>
+                  <td width="25%"><a href="'.TP_BACK_SIDE.$pname.'/status/'.$row2->id.'"  style="color:blue">'.$row2->status.'</a></td>
+                   <td class="action">';
+				  
+				  echo'<a href="'.TP_BACK_SIDE.$pname.'/edit/'.$row2->id.'" class="btn btn-info btn-circle btn-xs waves-effect waves-light">
+				        <i class="ico fa fa-pencil "></i></a>';
+					
+				  ?> 
+                 <a href="javascript:confirmDelete('<?=TP_BACK_SIDE?><?=$pname?>/delete/<?=$row2->id?>')" class="btn btn-danger btn-circle btn-xs waves-effect waves-light"><i class="ico fa fa-trash"></i></a></td>
+                
+                </tr>
+                <?php
+                  
+                   }
+				
+              echo'</tbody>
+            </table></div>
+          </form>';
+		  }

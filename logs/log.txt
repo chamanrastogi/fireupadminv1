@@ -1,0 +1,3 @@
+18-01-2020 09:53:59 PM | Logs Cleared: by User ID : 1
+04-02-2020 12:13:16 AM | Login: admin logged in.
+06-02-2020 12:00:59 PM | Login: admin logged in.

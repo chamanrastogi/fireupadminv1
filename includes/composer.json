@@ -1,0 +1,9 @@
+{
+    "require": {
+        "intervention/image": "^2.5",
+        "illuminate/hashing": "^5.5",
+        "hybridauth/hybridauth": "^3.0",
+        "kreait/firebase-php": "^4.35",
+        "stichoza/google-translate-php": "^4.0"
+    }
+}
