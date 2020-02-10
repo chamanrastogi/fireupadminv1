@@ -322,13 +322,13 @@ public function update() {
 	
 	
 public static function action_data($id) {	 
-		   $data=self::call_cl_fun();
- $logo='';
-  $favicon='';
-  $temp='';
-  $checkbox='';
-   $temps='';
-  $checkboxs='';
+	$data=self::call_cl_fun();
+	$logo='';
+	$favicon='';
+	$temp='';
+	$checkbox='';
+	$temps='';
+	$checkboxs='';
  if(isset($_REQUEST['submit'])){
 	extract($_POST);
 $data->sitename=$sitename;
@@ -341,14 +341,14 @@ $data->sitename=$sitename;
 	  {    
       $data->favicon=$data->image_maker($_FILES['favicon']);
 	  } 
-$data->email=$email;
-$data->keyword=$keyword;
-$data->description=$description;
-$data->ana=$ana;
-$data->mail_line=$mail_line;
-$data->id=1;
-$pp=$data->update();
-$message='<div align="center">                
+	$data->email=$email;
+	$data->keyword=$keyword;
+	$data->description=$description;
+	$data->ana=$ana;
+	$data->mail_line=$mail_line;
+	$data->id=1;
+	$pp=$data->update();
+	$message='<div align="center">                
                 <h4 class="alert alert-success">Success! Record Updated Successfully</h4>
                 <span><img src="'.TP_BACK.'assets/loaders/c_loader_re.gif" title="c_loader_re.gif"></span>
             </div>';	 
@@ -358,7 +358,7 @@ redirect_by_js("".TP_BACK."admin/dashboard/settings",100);
  }
 }
 	public function delete() {
-		global $database;
+	  global $database;
 		// Don't forget your SQL syntax and good habits:
 		// - DELETE FROM table WHERE condition LIMIT 1
 		// - escape all values to prevent SQL injection
@@ -376,9 +376,20 @@ redirect_by_js("".TP_BACK."admin/dashboard/settings",100);
 		// but, for example, we can't call $user->update() 
 		// after calling $user->delete().
 	}
-	public static function test() {
-		Template_mo::che();
+	public static function backupsql() {		
+		$data=Template_mo::backnow();
+		backup_action('File Name', "{$data}");
+		redirect_by_js("backnow_history",100);
   }
+  public static function backnow_history() {		
+		Template_mo::backnow_his();
+		
+  }
+   public static function backup_history_clear() {		
+		Template_mo::backup_history_clears();
+		
+  }
+
 public static function form_data() {
 		     echo $fo=Forms::form_start();			
 			  self::action_data(1,'edit');

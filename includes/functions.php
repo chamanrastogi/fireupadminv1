@@ -205,6 +205,20 @@ function log_action($action, $message="") {
     echo "Could not open log file for writing.";
   }
 }
+function backup_action($action, $message="") {
+	$logfile = SITE_ROOT.DS.'logs'.DS.'backup.txt';
+	$new = file_exists($logfile) ? false : true;
+  if($handle = fopen($logfile, 'a')) { // append
+  date_default_timezone_set('Asia/Kolkata');
+    $timestamp = strftime("%d-%m-%Y %I:%M:%S %p", time());
+	$content = "{$timestamp} | {$action}: {$message}\n";
+    fwrite($handle, $content);
+    fclose($handle);
+    if($new) { chmod($logfile, 0755); }
+  } else {
+    echo "Could not open log file for writing.";
+  }
+}
 
 function student_log_action($action, $message="",$student) {
 	$logfile = SITE_ROOT.DS.'logs'.DS.$student.'.txt';

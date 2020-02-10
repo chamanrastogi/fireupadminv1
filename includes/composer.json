@@ -4,6 +4,7 @@
         "illuminate/hashing": "^5.5",
         "hybridauth/hybridauth": "^3.0",
         "kreait/firebase-php": "^4.35",
-        "stichoza/google-translate-php": "^4.0"
+        "stichoza/google-translate-php": "^4.0",
+        "coderatio/simple-backup": "^1.0"
     }
 }

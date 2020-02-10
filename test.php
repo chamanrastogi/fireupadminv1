@@ -65,15 +65,9 @@ $ro=$data->showlist($table,$fromx);
 $data->cc($table,$fromx);
 
 
+ //-------------Remove table and class name---------//
 
-//$table="result";
-//$vrs=['cid',$int,'name',$str,'price',$str,'image',$str,'text',$text,'attr',$str,'created',$datetime,'status',$enum];
-//$ch1=sizeof($vrs);
-//echo "<strong>Created Table Name:</strong>".ucfirst($table)."<br><strong>No of Fields In Tables Total :</strong>".( $ch1/2). "<br>-----------------------<br>";
-//print_r($vrs);
-//$data->create($table,$vrs);
-//$ro=$data->showlist('tops');
-//echo $ro;
-//$data->cc($table);
+//$table="client";  
+//echo $x=$data->clearall($table);
 
 ?>

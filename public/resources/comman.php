@@ -2,6 +2,7 @@
 $action=$_GET['action'];
 $pname=$_GET['pname'];
 $pname_title=str_replace("_"," ",$_GET['pname']);
+$saction=str_replace("_"," ",$_GET['action']);
 if(strtolower($_GET['pname'])!='menus')
 {
 	if($_GET['action']=='show')
@@ -25,7 +26,7 @@ if(strtolower($_GET['pname'])!='menus')
   
   <div class="col-xl-6 col-12">
     <div class="box-content card white">
-      <h4 class="box-title"><?=ucfirst($_GET['action'])?> <?=ucfirst($pname_title)?>
+      <h4 class="box-title"><?=ucfirst($saction)?> <?=ucfirst($pname_title)?>
         <div style="float:right">
       <?=$url?>	
           <?=ucfirst($maction)?> <?=ucfirst($pname_title)?>

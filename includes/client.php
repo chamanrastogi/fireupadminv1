@@ -29,7 +29,7 @@ public static function hd_css() {
   } public static function hd_script() {
 	$x=script_formate('assets/plugin/datatables/media/css/dataTables.bootstrap.min.css'); 
 	$x.=script_formate('assets/plugin/datatables/media/js/jquery.dataTables.min.js');
-        $x.=script_formate('assets/plugin/datatables/media/js/dataTables.bootstrap.min.js');
+    $x.=script_formate('assets/plugin/datatables/media/js/dataTables.bootstrap.min.js');
 	$x.=script_formate('assets/plugin/datatables/media/js/dataTables.buttons.min.js');
 	$x.=script_formate('assets/plugin/datatables/media/js/buttons.flash.min.js');
 	$x.=script_formate('assets/plugin/datatables/media/js/jszip.min.js');
@@ -42,10 +42,10 @@ public static function hd_css() {
 	$x.=script_formate('assets/scripts/image.js');
 	//$x.=script_formate('assets/plugin/moment/moment.js');
 	//$x.=script_formate('assets/plugin/daterangepicker/daterangepicker.js');
-        $x.=script_formate('assets/plugin/lightview/js/lightview/lightview.js');
+    $x.=script_formate('assets/plugin/lightview/js/lightview/lightview.js');
 	$x.=script_formate('assets/plugin/validator/validator.min.js');
-	  $x.=self::extra_script();
-	  echo $x;
+	$x.=self::extra_script();
+	echo $x;
   }	
 public static function extra_script() {
    $table=self::$table_name;

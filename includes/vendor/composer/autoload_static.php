@@ -97,6 +97,7 @@ class ComposerStaticInit70e622be5a6212793f46d027a797a51a
         ),
         'C' => 
         array (
+            'Coderatio\\SimpleBackup\\' => 23,
             'Carbon\\' => 7,
         ),
     );
@@ -250,6 +251,10 @@ class ComposerStaticInit70e622be5a6212793f46d027a797a51a
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
+        'Coderatio\\SimpleBackup\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/coderatio/simple-backup/src',
+        ),
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
@@ -266,12 +271,33 @@ class ComposerStaticInit70e622be5a6212793f46d027a797a51a
         ),
     );
 
+    public static $classMap = array (
+        'Coderatio\\SimpleBackup\\Exceptions\\NoTablesFoundException' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Exceptions/NoTablesFoundException.php',
+        'Coderatio\\SimpleBackup\\Foundation\\CompressBzip2' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\CompressGzip' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\CompressManagerFactory' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\CompressMethod' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\CompressNone' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\Configurator' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Configurator.php',
+        'Coderatio\\SimpleBackup\\Foundation\\Database' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Database.php',
+        'Coderatio\\SimpleBackup\\Foundation\\Mysqldump' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\Provider' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Provider.php',
+        'Coderatio\\SimpleBackup\\Foundation\\TypeAdapter' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\TypeAdapterDblib' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\TypeAdapterFactory' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\TypeAdapterMysql' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\TypeAdapterPgsql' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\Foundation\\TypeAdapterSqlite' => __DIR__ . '/..' . '/coderatio/simple-backup/src/Foundation/Mysqldump.php',
+        'Coderatio\\SimpleBackup\\SimpleBackup' => __DIR__ . '/..' . '/coderatio/simple-backup/src/SimpleBackup.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit70e622be5a6212793f46d027a797a51a::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit70e622be5a6212793f46d027a797a51a::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit70e622be5a6212793f46d027a797a51a::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit70e622be5a6212793f46d027a797a51a::$classMap;
 
         }, null, ClassLoader::class);
     }
